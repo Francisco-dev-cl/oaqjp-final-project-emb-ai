@@ -1,45 +1,55 @@
 # Emotion Detection Web Application
 
-Este repositorio contiene la solución al proyecto final del curso de **IBM**, que consiste en una aplicación web interactiva que analiza el tono emocional de un texto. El sistema se conecta con la API de procesamiento de lenguaje natural (NLP) de **IBM Watson** para clasificar el texto en cinco emociones básicas y determinar la predominante.
+This repository contains the solution to the final project for the **IBM** course, which consists of an interactive web application that analyzes the emotional tone of text. The system connects to the **IBM Watson** Natural Language Processing (NLP) API to classify text into five basic emotions and determine the predominant one.
 
-## 🎯 Características y Objetivos del Proyecto
-*   **Consumo de APIs de IA:** Conexión asíncrona mediante peticiones HTTP `POST` al microservicio de *Watson NLP Service*.
-*   **Análisis Predictivo:** Cálculo de puntuaciones para las emociones *anger* (ira), *disgust* (disgusto), *fear* (miedo), *joy* (alegría) y *sadness* (tristeza), identificando dinámicamente la emoción dominante utilizando funciones nativas de Python (`max()`).
-*   **Control de Errores Robusto (Task 7):** Manejo de entradas en blanco o inválidas mediante la captura del código de estado HTTP 400 y validación de valores `None`, evitando caídas del servidor y mejorando la experiencia de usuario.
-*   **Cumplimiento de Estándares de Código:** Todo el backend cumple rigurosamente con las normativas de estilo tradicionales (incluye docstrings completos en módulos y funciones para facilitar el mantenimiento).
+## 🎯 Project Features and Objectives
 
-## 📁 Componentes Clave del Código
-*   **`EmotionDetection/emotion_detection.py`**: Contiene la función `emotion_detector()`, encargada de estructurar el objeto JSON, enviar los encabezados gRPC requeridos, consumir la API de Watson y procesar la respuesta estructurada.
-*   **`server.py`**: El núcleo de la aplicación web en **Flask**. Configura el enrutamiento para la interfaz de usuario (`/`) y el endpoint de la API (`/emotionDetector`) que procesa los parámetros de consulta y formatea la respuesta final para el cliente.
+* **AI API Consumption:** Asynchronous connection using HTTP POST requests to the *Watson NLP Service* microservice.
+* **Predictive Analysis:** Calculation of scores for the emotions *anger*, *disgust*, *fear*, *joy*, and *sadness*, dynamically identifying the dominant emotion using native Python functions (`max()`).
+* **Robust Error Handling (Task 7):** Handling blank or invalid inputs by capturing the HTTP 400 status code and validating `None` values, preventing server crashes and improving user experience.
+* **Code Standards Compliance:** The entire backend strictly complies with traditional style regulations (includes full docstrings in modules and functions to facilitate maintenance).
 
-## 🛠️ Tecnologías Utilizadas
-*   **Backend:** Python 3.x, Flask
-*   **Librerías de Red:** Requests, JSON
-*   **Servicio de IA:** IBM Watson NLP Runtime (`emotion_aggregated-workflow`)
-*   **Frontend:** HTML5, CSS3, JavaScript (AJAX)
+## 📁 Key Code Components
 
-## 🚀 Instalación y Ejecución Local
+* **EmotionDetection/emotion_detection.py**: Contains the `emotion_detector()` function, responsible for structuring the JSON object, sending the required gRPC headers, consuming the Watson API, and processing the structured response.
+* **server.py**: The core of the web application built with **Flask**. Configures routing for the user interface (`/`) and the API endpoint (`/emotionDetector`) that processes query parameters and formats the final response for the client.
 
-### 1. Clonar el repositorio
+## 🛠 Technologies Used
+
+* **Backend:** Python 3.x, Flask
+* **Network Libraries:** Requests, JSON
+* **AI Service:** IBM Watson NLP Runtime (`emotion_aggregated-workflow`)
+* **Frontend:** HTML5, CSS3, JavaScript (AJAX)
+
+## 🚀 Local Installation and Execution
+
+### 1. Clone the repository
+
 ```bash
 git clone https://github.com
 cd oaqjp-final-project-emb-ai
 ```
 
-### 2. Instalar dependencias requeridas
-Asegúrate de contar con Flask y la librería de peticiones HTTP instaladas en tu entorno local o virtual:
+### 2. Install required dependencies
+
+Make sure you have Flask and the HTTP requests library installed in your local or virtual environment:
+
 ```bash
 pip install Flask requests
 ```
 
-### 3. Iniciar la aplicación web
-Ejecuta el servidor backend:
+### 3. Start the web application
+
+Run the backend server:
+
 ```bash
 python server.py
 ```
-El servidor se desplegará localmente en el puerto `5000`. Puedes abrir tu navegador e ingresar a: `http://localhost:5000/`.
 
-## 📈 Habilidades Técnicas Demostradas (Para Reclutadores)
-*   **Desarrollo de Microservicios Backend:** Creación y configuración de servidores web con Flask en producción local.
-*   **Integración de Modelos de IA:** Consumo efectivo de servicios en la nube (Cloud AI integration) abstrayendo la complejidad del modelo NLP.
-*   **Lógica de Programación y Manejo de Datos:** Filtrado de diccionarios complejos de tipo JSON, ordenamiento de datos clave-valor y sanitización de entradas de usuario.
+The server will deploy locally on port 5000. You can open your browser and go to: http://localhost:5000/.
+
+## 📈 Technical Skills Demonstrated (For Recruiters)
+
+* **Backend Microservices Development:** Creation and configuration of web servers with Flask in local production environments.
+* **AI Model Integration:** Effective consumption of cloud services (Cloud AI integration), abstracting the complexity of the NLP model.
+* **Programming Logic and Data Handling:** Filtering of complex JSON dictionaries, key-value data sorting, and user input sanitization.
